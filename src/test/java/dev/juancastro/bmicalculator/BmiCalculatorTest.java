@@ -13,7 +13,7 @@ public class BmiCalculatorTest {
     void shouldCalculateBMIForValidPerson() {
         Persona persona = new Persona(70, 1.75);
         double bmi = calculator.calculateBMI(persona);
-        assertThat(bmi, closeTo(22.86, 0.01)); // IMC esperado con tolerancia
+        assertThat(bmi, closeTo(22.86, 0.01)); 
     }
 
     @Test
