@@ -2,17 +2,23 @@ package dev.juancastro.bmicalculator;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
-/**
- * Unit test for simple App.
- */
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 class AppTest {
-    /**
-     * Rigorous Test.
-     */
+
     @Test
-    void testApp() {
-        assertEquals(1, 1);
+    void testMainMethodOutput() {
+      
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+
+        App.main(new String[]{});
+
+        System.setOut(System.out);
+
+        assertTrue(outContent.toString().contains("El IMC es:"));
     }
 }

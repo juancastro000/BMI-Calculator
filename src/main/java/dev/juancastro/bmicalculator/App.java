@@ -1,17 +1,12 @@
 package dev.juancastro.bmicalculator;
 
-/**
- * Hello world!
- */
-public final class App {
-    private App() {
-    }
 
-    /**
-     * Says hello to the world.
-     * @param args The arguments of the program.
-     */
+public class App {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Persona persona = new Persona(70, 1.75);
+        BmiCalculator calculator = new BmiCalculator();
+        
+        double bmi = calculator.calculateBMI(persona);
+        System.out.println("El IMC es: " + bmi);
     }
 }
